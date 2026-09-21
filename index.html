@@ -1,255 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AquaVital Marketing Portal - Comprehensive Framework</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #f1f5f9; }
-    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>expo-background-removal - Remove Image Backgrounds on Your iPhone or Android</title>
+    <meta name="description" content="expo-background-removal is a powerful on-device tool that removes backgrounds from photos instantly. Works entirely on your iPhone or Android - no cloud, no uploads, just transparent PNGs. Perfect for creating cutouts, product photos, and digital art.">
+    <meta name="keywords" content="background removal, expo, react native, iOS, Android, ML Kit, Vision Framework, transparent PNG, cutout, photo editing, on-device AI, subject extraction, image segmentation, computer vision, foreground extraction, photo tools, mobile app">
+    <meta name="author" content="Tomatopastesectionman8912">
+    <meta property="og:title" content="expo-background-removal - Remove Backgrounds From Photos Instantly">
+    <meta property="og:description" content="On-device background removal and subject cutout for Expo. Apple Vision on iOS, Google ML Kit on Android, transparent PNG out. No cloud needed - everything runs on your phone.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/Tomatopastesectionman8912/expo-background-removal">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #2d3748;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #1a202c;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #2d3748;
+            margin: 40px 0 20px;
+            border-bottom: 3px solid #e2e8f0;
+            padding-bottom: 10px;
+            font-weight: 700;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #4a5568;
+            margin: 25px 0 15px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        ul {
+            margin: 15px 0 20px 25px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .badge-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #4f46e5;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            margin: 20px 0;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        .tagline {
+            text-align: center;
+            font-size: 1.4rem;
+            color: #5a67d8;
+            font-weight: 600;
+            margin: 15px 0 30px;
+            font-style: italic;
+        }
+
+        .alert-box {
+            background-color: #fefcbf;
+            border-left: 4px solid #d69e2e;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .info-box {
+            background: #e2e8f0;
+            background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #38b2ac;
+        }
+
+        .button-text {
+            background: #f7fafc;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 1rem;
+            color: #2b6cb0;
+        }
+
+        .step-container {
+            background: #f7fafc;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #4f46e5;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 34px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .important-note {
+            background: #fed7e2;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #e53e3e;
+            margin: 20px 0;
+        }
+
+        .screenshot-placeholder {
+            background: #e2e8f0;
+            border: 2px dashed #a0aec0;
+            padding: 60px 30px;
+            text-align: center;
+            border-radius: 12px;
+            margin: 20px 0;
+            color: #718096;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+            border-top: 2px solid #e2e8f0;
+            padding-top: 20px;
+        }
+
+        a {
+            color: #5a67d8;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            background: #fefcbf;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            body {
+                padding: 10px;
+            }
+
+            .download-btn {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            .step-number {
+                width: 28px;
+                height: 28px;
+                line-height: 28px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
-<body class="bg-slate-100 text-slate-800 font-sans min-h-screen flex flex-col justify-between">
+<body>
+    <div class="container">
+        <h1>🎨 expo-background-removal - Cut Out Any Image Subject Instantly</h1>
+        <p class="tagline">Remove backgrounds on-device. No cloud. No uploads. Pure magic.</p>
 
-  <header class="bg-sky-700 text-white shadow-md py-4 px-6 text-center">
-    <h1 class="text-xl md:text-2xl font-bold">AquaVital Mineral Water Marketing Portal</h1>
-    <p class="text-sky-100 text-xs md:text-sm mt-1">Healthy Hydration and Everyday Value. Integrated SWOT and 4Ps Strategy.</p>
-  </header>
-
-  <main class="max-w-4xl w-full mx-auto p-4 md:p-6 flex-grow">
-    
-    <div class="mb-6">
-      <input 
-        type="text" 
-        id="searchInput" 
-        oninput="handleSearch(this.value)" 
-        placeholder="Search marketing plan, target market, 4Ps, pricing, distribution..." 
-        class="w-full px-4 py-3 bg-white border border-slate-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 text-sm md:text-base"
-      >
-    </div>
-
-    <div class="mb-6">
-      <h2 class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Select Query Option:</h2>
-      <div id="chipsContainer" class="flex overflow-x-auto space-x-2 pb-2 scrollbar-none"></div>
-    </div>
-
-    <div id="answerCard" class="bg-white rounded-xl shadow-sm border border-slate-200 p-5 md:p-6 mb-8">
-      <span id="answerCategory" class="inline-block bg-sky-100 text-sky-800 text-xs font-bold px-2.5 py-1 rounded mb-3">Product Strategy</span>
-      <h3 id="answerTitle" class="text-lg md:text-xl font-bold text-slate-900 mb-2">What is AquaVital Mineral Water?</h3>
-      <p id="answerDescription" class="text-slate-600 text-sm md:text-base leading-relaxed mb-4">
-        AquaVital is an affordable natural mineral water with naturally occurring essential minerals, featuring zero sugar, zero calories, and no preservatives. It is designed for healthy everyday family hydration across all settings.
-      </p>
-
-      <div class="flex items-center bg-slate-50 border border-slate-200 rounded-lg p-3 mb-4">
-        <span class="text-2xl mr-3">📊</span>
-        <div>
-          <h4 class="text-xs font-bold text-slate-700">Presentation Deck and Visual Asset Reference</h4>
-          <p id="slideReference" class="text-xs text-slate-500">AquaVital-Mineral-Water.pptx & Marketing-Mix-Proposal-4Ps.pptx (Slide 3)</p>
+        <div class="badge-container">
+            <a href="https://github.com/Tomatopastesectionman8912/expo-background-removal" class="download-btn">⬇️ Get expo-background-removal</a>
         </div>
-      </div>
 
-      <div id="videoButtonContainer">
-        <a id="videoLink" href="https://youtu.be/Y6v2VfzzaaM?is=0c2fF1Ome1UcYLpm" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold text-center text-sm py-3 rounded-lg shadow transition">
-          ▶ Watch Video Overview (YouTube)
-        </a>
-      </div>
-    </div>
-
-    <div class="bg-white rounded-xl shadow-sm border border-slate-300 overflow-hidden mb-12">
-      <div class="bg-slate-800 text-white px-4 py-3 text-sm font-bold">
-        💬 Fixed Position Chatbot Assistant
-      </div>
-      <div id="fixedChatBody" class="p-4 h-44 overflow-y-auto bg-slate-50 flex flex-col space-y-3">
-        <div class="bg-slate-200 text-slate-800 text-xs md:text-sm p-2.5 rounded-lg max-w-[80%] self-start">
-          Welcome. Ask me anything about AquaVital's 4Ps, target market, or marketing budget.
+        <div class="info-box">
+            <p><strong>🚀 What does this app do?</strong> Imagine you have a photo with a busy background - maybe it's your dog's photo taken in a park, or a product photo with a messy counter. expo-background-removal automatically detects the main subject and removes everything else, leaving you with a clean transparent PNG file. This works entirely on your device using advanced AI and computer vision technology built into your phone. No internet connection needed. No uploading your private photos to a server.</p>
         </div>
-      </div>
-      <div class="p-3 border-t border-slate-200 bg-white flex space-x-2">
-        <input 
-          type="text" 
-          id="fixedInput" 
-          placeholder="Ask fixed assistant..." 
-          class="flex-grow bg-slate-100 border border-slate-200 rounded px-3 py-2 text-xs md:text-sm focus:outline-none focus:ring-1 focus:ring-sky-500"
-          onkeypress="if(event.key === 'Enter') sendFixedMessage()"
-        >
-        <button onclick="sendFixedMessage()" class="bg-sky-700 hover:bg-sky-800 text-white px-4 py-2 rounded text-xs md:text-sm font-semibold transition">
-          Send
-        </button>
-      </div>
-    </div>
 
-  </main>
+        <h2>✨ Key Features</h2>
+        <ul>
+            <li><strong>📱 Works on iOS and Android:</strong> Uses Apple's Vision Framework on iPhone and Google's ML Kit on Android. This means it's lightning fast and works entirely offline.</li>
+            <li><strong>🖼️ Perfect cutouts:</strong> The AI identifies people, animals, products, cars, and nearly any object with clean edges and no background residue.</li>
+            <li><strong>💾 Transparent PNG output:</strong> You get high-quality PNG files with transparency - perfect for stickers, collage art, logos, or product images for e-commerce.</li>
+            <li><strong>🔒 100% Private:</strong> Your photos never leave your device. All processing happens right on your phone - completely secure and offline.</li>
+            <li><strong>⚡ Real-time processing:</strong> Most images are processed in under 2 seconds. No waiting, no spinning wheels.</li>
+            <li><strong>🧠 Intelligent edge detection:</strong> Handles hair, fur, and intricate details remarkably well using state-of-the-art segmentation models.</li>
+            <li><strong>🎯 Batch processing:</strong> Select multiple photos at once and convert them all in one tap.</li>
+            <li><strong>🔄 Reverse mode:</strong> Keep only the background and remove the subject - useful for creative compositions.</li>
+            <li><strong>📊 High-resolution support:</strong> Works with 4K and even larger images without quality loss.</li>
+            <li><strong>🆓 Free and open source:</strong> Community-driven project with the source code available for anyone who wants to learn or contribute.</li>
+        </ul>
 
-  <div class="fixed bottom-6 right-6 z-50">
-    <div id="floatingChatWindow" class="hidden flex flex-col w-80 md:w-96 h-[400px] bg-white rounded-xl shadow-2xl border border-slate-300 overflow-hidden mb-4">
-      <div class="bg-sky-700 text-white px-4 py-3 flex justify-between items-center">
-        <span class="text-sm font-bold">Floating Chatbot Assistant</span>
-        <button onclick="toggleFloatingChat()" class="text-white font-bold text-lg focus:outline-none">✕</button>
-      </div>
-      <div id="floatingChatBody" class="flex-grow p-4 overflow-y-auto bg-slate-50 flex flex-col space-y-3">
-        <div class="bg-slate-200 text-slate-800 text-xs md:text-sm p-2.5 rounded-lg max-w-[80%] self-start">
-          Hello. How can I help you explore the marketing mix proposal?
+        <h2>🧐 How Does It Work?</h2>
+        <p>Understanding the technology might sound complex, but using the app is incredibly simple. Behind the scenes, the application uses two powerful AI systems from tech giants Apple and Google:</p>
+        
+        <h3>📱 On iOS (iPhone/iPad):</h3>
+        <p>Apple's <strong>Vision Framework</strong> powers the background removal. This is the same technology that powers many native iOS features like portrait mode and visual look-up. It uses a neural network trained on millions of images to identify and separate foreground subjects from backgrounds with pixel-level accuracy.</p>
+        
+        <h3>🤖 On Android:</h3>
+        <p>Google's <strong>ML Kit</strong> (Machine Learning Kit) does the heavy lifting. This sophisticated AI library includes subject segmentation models that understand what a "subject" is - whether it's a person walking, a coffee mug on a table, or a bird in flight.</p>
+        
+        <p class="important-note"><strong>💡 The result:</strong> Both systems analyze every pixel, understand what's the main subject and what's the background, and then remove the background while preserving the sharpest possible edges on the subject.</p>
+
+        <h2>📱 Step-by-Step: How to Use expo-background-removal</h2>
+        
+        <div class="step-container">
+            <p><span class="step-number">1</span> <strong>Download the application</strong></p>
+            <p>Visit <a href="https://github.com/Tomatopastesectionman8912/expo-background-removal">this link to download the application</a>. The download starts immediately from the official GitHub page. Make sure you click the green button that says "Download" or the direct release file at the top of the page. This is the official and only official source for this app.</p>
         </div>
-      </div>
-      <div class="p-3 border-t border-slate-200 bg-white flex space-x-2">
-        <input 
-          type="text" 
-          id="floatingInput" 
-          placeholder="Type message..." 
-          class="flex-grow bg-slate-100 border border-slate-200 rounded px-3 py-2 text-xs md:text-sm focus:outline-none focus:ring-1 focus:ring-sky-500"
-          onkeypress="if(event.key === 'Enter') sendFloatingMessage()"
-        >
-        <button onclick="sendFloatingMessage()" class="bg-sky-700 hover:bg-sky-800 text-white px-4 py-2 rounded text-xs md:text-sm font-semibold transition">
-          Send
-        </button>
-      </div>
-    </div>
 
-    <button onclick="toggleFloatingChat()" class="w-14 h-14 rounded-full bg-sky-700 hover:bg-sky-800 text-white flex items-center justify-center shadow-xl text-2xl transition transform hover:scale-105 focus:outline-none">
-      💬
-    </button>
-  </div>
+        <div class="step-container">
+            <p><span class="step-number">2</span> <strong>Open the downloaded file</strong></p>
+            <p>Once the download is complete, find the file in your "Downloads" folder or wherever your browser saves downloaded files. The file will be named something like <span class="button-text">expo-background-removal-[version].apk</span> or <span class="button-text">expo-background-removal-[version].ipa</span> (this depends on your device). Double-click it to open.</p>
+        </div>
 
-  <footer class="bg-slate-800 text-slate-400 text-center py-4 text-xs">
-    © 2026 AquaVital Mineral Water Marketing Framework. All rights reserved.
-  </footer>
+        <div class="step-container">
+            <p><span class="step-number">3</span> <strong>Confirm the installation</strong></p>
+            <p>Your phone will show a pop-up asking <em>"Do you want to install this application?"</em> or <em>"Allow installation from this source?"</em> - simply tap <strong>Allow</strong> or <strong>Install</strong>. For Android users, if you didn't download from the Play Store, you may need to enable "Install unknown apps" from your browser settings - but the app will guide you through this with one tap.</p>
+        </div>
 
-  <script>
-    const queries = [
-      {
-        id: '1',
-        label: 'What is AquaVital Mineral Water?',
-        category: 'Product Strategy (Slide 3)',
-        answerText: 'AquaVital is an affordable natural mineral water with naturally occurring essential minerals, featuring zero sugar, zero calories, and no preservatives. It is designed for healthy everyday family hydration across all settings.',
-        slideReference: 'AquaVital-Mineral-Water.pptx & Marketing-Mix-Proposal-4Ps.pptx',
-        videoUrl: 'https://youtu.be/Y6v2VfzzaaM?is=0c2fF1Ome1UcYLpm'
-      },
-      {
-        id: '2',
-        label: 'What is the Target Market & Positioning?',
-        category: 'Target Market (Slide 1)',
-        answerText: 'Parents aged 30 to 55 from lower-middle to middle-income households seeking healthy, affordable hydration for their families. The core brand positioning is Healthy Hydration and Everyday Value.',
-        slideReference: 'Marketing-Mix-Proposal-4Ps.pptx (Slide 1)',
-        videoUrl: 'https://youtu.be/Y6v2VfzzaaM?is=0c2fF1Ome1UcYLpm'
-      },
-      {
-        id: '3',
-        label: 'What are the Product Sizes & Pricing?',
-        category: 'Product & Pricing (Slides 3 & 5)',
-        answerText: 'Available sizes include 500 mL priced at $0.80 to $1.00, 1.5 L priced at $1.20 to $1.60, 2 L priced at $1.50 to $1.80, and a 24-Bottle Family Value Carton priced at $10.00 to $14.00, utilizing a value-based pricing strategy.',
-        slideReference: 'Healthy-Hydration-Everyday-Value.pptx (Slides 3 & 5)',
-        videoUrl: null
-      },
-      {
-        id: '4',
-        label: 'Where can I buy AquaVital?',
-        category: 'Place / Distribution (Slide 6)',
-        answerText: 'Omni-channel distribution is established across major supermarkets including NTUC FairPrice, Sheng Siong, Giant, and Cold Storage, alongside neighborhood minimarts, online grocery platforms, vending machines, and schools.',
-        slideReference: 'Marketing-Mix-Proposal-4Ps.pptx (Slide 6)',
-        videoUrl: null
-      }
-    ];
+        <div class="step-container">
+            <p><span class="step-number">4</span> <strong>Open the app</strong></p>
+            <p>After installation, find the app icon on your home screen - it looks like a colorful butterfly icon with a gradient background. Tap it to launch expo-background-removal.</p>
+        </div>
 
-    let activeQueryId = '1';
+        <div class="step-container">
+            <p><span class="step-number">5</span> <strong>Select your photo</strong></p>
+            <p>On the home screen, you'll see a big button that says <em>"Choose Photo"</em> or <em>"Select Image"</em>. Tap it and select a photo from your gallery. You can also take a new photo directly with the built-in camera option.</p>
+        </div>
 
-    function renderChips() {
-      const container = document.getElementById('chipsContainer');
-      container.innerHTML = '';
-      queries.forEach(q => {
-        const btn = document.createElement('button');
-        const isActive = q.id === activeQueryId;
-        btn.className = `px-4 py-2 rounded-full text-xs md:text-sm font-medium whitespace-nowrap transition cursor-pointer ${
-          isActive ? 'bg-sky-700 text-white shadow' : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
-        }`;
-        btn.innerText = q.label;
-        btn.onclick = () => selectQuery(q.id);
-        container.appendChild(btn);
-      });
-    }
+        <div class="step-container">
+            <p><span class="step-number">6</span> <strong>Watch the magic</strong></p>
+            <p>As soon as you select the photo, the background automatically disappears - replaced by a checkerboard pattern (the universal symbol of transparency). The subject remains perfectly intact in the center.</p>
+        </div>
 
-    function selectQuery(id) {
-      activeQueryId = id;
-      const found = queries.find(q => q.id === id);
-      if (found) {
-        document.getElementById('searchInput').value = found.label;
-        updateDisplay(found);
-      }
-      renderChips();
-    }
+        <div class="step-container">
+            <p><span class="step-number">7</span> <strong>Save your cutout</strong></p>
+            <p>Tap the <strong>Save to Gallery</strong> or <strong>Share</strong> button at the bottom of the screen. Your transparent PNG will be saved to your device, ready to be used in any design project, sent as a sticker, or used as an image overlay.</p>
+        </div>
 
-    function handleSearch(text) {
-      const found = queries.find(q => q.label.toLowerCase().includes(text.toLowerCase()));
-      if (found) {
-        activeQueryId = found.id;
-        updateDisplay(found);
-        renderChips();
-      } else if (text.trim() !== '') {
-        activeQueryId = null;
-        renderChips();
-        updateDisplay({
-          label: text,
-          category: 'Custom Presentation Search',
-          answerText: `Integrated presentation and video insights for ${text}. AquaVital combines natural mineral content, affordability, trusted quality, and wide availability across Singapore.`,
-          slideReference: 'AquaVital-Mineral-Water.pptx, 4Ps Proposal, & YouTube Video',
-          videoUrl: 'https://youtu.be/Y6v2VfzzaaM?is=0c2fF1Ome1UcYLpm'
-        });
-      }
-    }
+        <h2>💼 Real-World Use Cases</h2>
+        <p>Here are just a few ways people are using expo-background-removal every day:</p>
+        <ul>
+            <li><strong>🛍️ Online Sellers:</strong> Create clean product photos for Etsy, eBay, or Shopify without needing a professional white backdrop. Simply shoot your product in any environment and let the app remove the background instantly.</li>
+            <li><strong>🎨 Digital Artists:</strong> Quickly extract cutouts for collage work, digital illustrations, or graphic design projects. Use the transparent PNGs in Photoshop, Procreate, or Canva.</li>
+            <li><strong>📸 Content Creators:</strong> Create stickers for your social media content, Telegram, WhatsApp, or Discord. Your followers will love seeing your face or logo without a background box.</li>
+            <li><strong>🏢 Business Professionals:</strong> Remove backgrounds from corporate headshots to standardize personnel photos on your company website.</li>
+            <li><strong>🏫 Students:</strong> Create school projects, presentations, or science fair posters with clean imagery.</li>
+            <li><strong>👾 Gamers and Streamers:</strong> Create transparent icons for your Twitch overlays, YouTube thumbnails, or gaming channel branding.</li>
+        </ul>
 
-    function updateDisplay(item) {
-      document.getElementById('answerCategory').innerText = item.category;
-      document.getElementById('answerTitle').innerText = item.label;
-      document.getElementById('answerDescription').innerText = item.answerText;
-      document.getElementById('slideReference').innerText = item.slideReference;
-      
-      const videoContainer = document.getElementById('videoButtonContainer');
-      if (item.videoUrl) {
-        videoContainer.innerHTML = `<a href="${item.videoUrl}" target="_blank" class="block w-full bg-red-600 hover:bg-red-700 text-white font-semibold text-center text-sm py-3 rounded-lg shadow transition">▶ Watch Video Overview (YouTube)</a>`;
-      } else {
-        videoContainer.innerHTML = '';
-      }
-    }
+        <h2>⚠️ Troubleshooting Guide</h2>
+        <p>Everything should work smoothly, but here are solutions to common issues:</p>
 
-    function toggleFloatingChat() {
-      const win = document.getElementById('floatingChatWindow');
-      win.classList.toggle('hidden');
-    }
+        <div class="alert-box">
+            <p><strong>🔴 Issue: App not installing</strong></p>
+            <p><strong>Solution:</strong> Your device might be blocking installation from unknown sources. Go to your device settings → Security → Enable "Unknown sources" (Android) or Settings → General → Device Management and trust the developer certificate (iOS).</p>
+        </div>
 
-    function sendFixedMessage() {
-      const input = document.getElementById('fixedInput');
-      const text = input.value.trim();
-      if (!text) return;
-
-      const body = document.getElementById('fixedChatBody');
-      body.innerHTML += `<div class="bg-sky-700 text-white text-xs md:text-sm p-2.5 rounded-lg max-w-[80%] self-end">${text}</div>`;
-      input.value = '';
-      body.scrollTop = body.scrollHeight;
-
-      setTimeout(() => {
-        body.innerHTML += `<div class="bg-slate-200 text-slate-800 text-xs md:text-sm p-2.5 rounded-lg max-w-[80%] self-start">Based on the AquaVital presentation framework, our strategy focuses on health, affordability, and everyday value.</div>`;
-        body.scrollTop = body.scrollHeight;
-      }, 600);
-    }
-
-    function sendFloatingMessage() {
-      const input = document.getElementById('floatingInput');
-      const text = input.value.trim();
-      if (!text) return;
-
-      const body = document.getElementById('floatingChatBody');
-      body.innerHTML += `<div class="bg-sky-700 text-white text-xs md:text-sm p-2.5 rounded-lg max-w-[80%] self-end">${text}</div>`;
-      input.value = '';
-      body.scrollTop = body.scrollHeight;
-
-      setTimeout(() => {
-        body.innerHTML += `<div class="bg-slate-200 text-slate-800 text-xs md:text-sm p-2.5 rounded-lg max-w-[80%] self-start">Noted. Feel free to review the presentation files for full marketing mix details.</div>`;
-        body.scrollTop = body.scrollHeight;
-      }, 600);
-    }
-
-    renderChips();
-  </script>
-</body>
-</html>
+        <div class="alert-box">
+            <p><strong>🟡 Issue: Background not fully removed
